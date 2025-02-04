@@ -1,9 +1,10 @@
 import os
 import uuid
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, url_for
 from google.cloud import dialogflow_v2 as dialogflow
 
-app = Flask(__name__, template_folder='../frontend')  # Make sure this points to the frontend folder
+# Flask app initialization
+app = Flask(__name__, template_folder='frontend', static_folder='static')
 
 # Use environment variables for configuration
 PROJECT_ID = os.getenv('DIALOGFLOW_PROJECT_ID', 'smart-pie-n9vm')
@@ -12,6 +13,7 @@ CREDENTIALS_PATH = os.getenv('GOOGLE_APPLICATION_CREDENTIALS', 'downloaded-crede
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = CREDENTIALS_PATH
 
 def get_dialogflow_response(query: str) -> str:
+    """Get response from Dialogflow"""
     try:
         session_client = dialogflow.SessionsClient()
         session = session_client.session_path(PROJECT_ID, str(uuid.uuid4()))
@@ -27,13 +29,15 @@ def get_dialogflow_response(query: str) -> str:
 
 @app.route('/')
 def home():
-    return render_template('index.html')  # Flask will look in the 'frontend' folder for this
+    """Render the main chatbot page"""
+    return render_template('index.html')
 
-@app.route('/chat', methods=['POST'])  # Update the route to '/chat' for sending user input
+@app.route('/chat', methods=['POST'])
 def get_response():
-    user_input = request.json.get('message')  # Get the message sent by the user
-    bot_response = get_dialogflow_response(user_input)  # Get the bot response from Dialogflow
-    return jsonify({'response': bot_response})  # Return the response as JSON
+    """Handle chat requests and return Dialogflow responses"""
+    user_input = request.json.get('message')
+    bot_response = get_dialogflow_response(user_input)
+    return jsonify({'response': bot_response})
 
 if __name__ == '__main__':
     app.run(debug=True)
