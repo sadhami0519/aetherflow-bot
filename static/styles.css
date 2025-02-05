@@ -9,13 +9,15 @@
     --input-border-light: #E5E7EB;
 
     /* Dark Mode Colors - Inspired by elegant themes */
-    --primary-color-dark: #F97316; /* Orange */
-    --secondary-color-dark: #6D28D9; /* Violet */
-    --bg-gradient-start-dark: #1F2937; /* Deep slate gray */
-    --bg-gradient-end-dark: #111827; /* Almost black */
+    --primary-color-dark: #c12261; /* Orange */
+    --secondary-color-dark: #401882; /* Violet */
+    --bg-gradient-start-dark: #451e8e; /* Deep slate gray */
+    --bg-gradient-end-dark: #741754; /* Almost black */
+    --pomodoro-gradient-start-dark: #e892b6;
+    --pomodoro-gradient-end-dark: #bb9bef;
     --text-color-dark: #F3F4F6;
-    --background-dark: #111827;
-    --input-border-dark: #374151;
+    --background-dark: #2a364f;
+    --input-border-dark: #585e68;
 }
 
 body {
@@ -56,13 +58,21 @@ body.dark-mode .chat-container {
     box-shadow: 0 25px 50px -12px rgba(255, 255, 255, 0.05);
 }
 
-.chat-header {
-    padding: 1.25rem;
+/* Position settings and clock icons closer */
+.header-right {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    transition: all 0.3s ease;
+    gap: 0.4rem; /* Adjust the spacing */
 }
+
+/* Optional: Adjust button sizes for better alignment */
+.chat-header button {
+    margin-left: 0;
+    padding: 0.4rem 0.6rem;
+}
+
+
+
 
 /* Light Mode Header */
 body:not(.dark-mode) .chat-header {
@@ -266,6 +276,43 @@ body.dark-mode .settings-content {
     box-shadow: 0 10px 25px rgba(255,255,255,0.05);
 }
 
+/* Light Mode - Close Button Styling */
+body:not(.dark-mode) .settings-content button {
+    background: var(--input-border-light); /* Light gray background */
+    color: var(--text-color-light); /* Dark text */
+    border: 1px solid var(--text-color-light); /* Optional border for contrast */
+}
+
+body:not(.dark-mode) .settings-content button:hover {
+    background: var(--primary-color-light); /* A more noticeable color on hover */
+    color: white;
+}
+
+/* Light Mode - Close Button Styling */
+body:not(.dark-mode) .settings-content button {
+    background: var(--input-border-light); /* Light gray background */
+    color: var(--text-color-light); /* Dark text */
+    border: 1px solid var(--text-color-light); /* Optional border for contrast */
+}
+
+body:not(.dark-mode) .settings-content button:hover {
+    background: var(--primary-color-light); /* A more noticeable color on hover */
+    color: white;
+}
+
+/* Dark Mode - Fix Close Button Visibility */
+body.dark-mode .settings-content button {
+    background: var(--input-border-dark); /* A darker background */
+    color: var(--text-color-dark); /* White text */
+    border: 1px solid var(--text-color-dark); /* Optional border for visibility */
+}
+
+body.dark-mode .settings-content button:hover {
+    background: var(--primary-color-dark); /* A more noticeable color on hover */
+    color: white;
+}
+
+
 .toggle-switch {
     position: relative;
     display: inline-block;
@@ -310,3 +357,53 @@ input:checked + .toggle-slider {
 input:checked + .toggle-slider:before {
     transform: translateX(26px);
 }
+
+.chat-container.landscape-mode {
+    max-width: 700px;  /* Wider than default 450px */
+    height: 500px;     /* Shorter than default 700px */
+}
+
+/* Pomodoro Timer Modal Styles */
+body:not(.dark-mode) #pomodoro-modal .settings-content {
+    background: white;
+    color: var(--text-color-light);
+ }
+ 
+ body.dark-mode #pomodoro-modal .settings-content {
+    background: var(--background-dark);
+    color: var(--text-color-dark);
+ }
+ 
+ #pomodoro-modal .timer-display {
+    background: linear-gradient(45deg, var(--bg-gradient-start-light), var(--bg-gradient-end-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    mask-image: linear-gradient(45deg, var(--bg-gradient-start-light), var(--bg-gradient-end-light));
+    -webkit-mask-image: linear-gradient(45deg, var(--bg-gradient-start-light), var(--bg-gradient-end-light));
+}
+
+
+ 
+ body.dark-mode #pomodoro-modal .timer-display {
+    background: linear-gradient(45deg, var(--pomodoro-gradient-start-dark), var(--pomodoro-gradient-end-dark));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    mask-image: linear-gradient(45deg, var(--pomodoro-gradient-start-dark), var(--pomodoro-gradient-end-dark));
+    -webkit-mask-image: linear-gradient(45deg, var(--pomodoro-gradient-start-dark), var(--pomodoro-gradient-end-dark));
+ }
+
+ .chat-header {
+    padding: 1.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+ 
+.chat-header button {
+    margin-left: 0.25rem;
+ }

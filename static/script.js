@@ -1,4 +1,7 @@
- // Dark Mode Toggle
+
+ // At the bottom of script.js, add:
+document.addEventListener('DOMContentLoaded', () => {
+     // Dark Mode Toggle
  const darkModeToggle = document.getElementById('dark-mode-toggle');
  const settingsModal = document.getElementById('settings-modal');
  const settingsButton = document.getElementById('settings-button');
@@ -30,6 +33,27 @@
          localStorage.removeItem('darkMode');
      }
  });
+
+ // Landscape Mode Toggle
+const landscapeModeToggle = document.getElementById('landscape-mode-toggle');
+
+// Check for saved landscape mode preference
+if (localStorage.getItem('landscapeMode') === 'enabled') {
+    document.querySelector('.chat-container').classList.add('landscape-mode');
+    landscapeModeToggle.checked = true;
+}
+
+// Landscape Mode Toggle
+landscapeModeToggle.addEventListener('change', () => {
+    const chatContainer = document.querySelector('.chat-container');
+    if (landscapeModeToggle.checked) {
+        chatContainer.classList.add('landscape-mode');
+        localStorage.setItem('landscapeMode', 'enabled');
+    } else {
+        chatContainer.classList.remove('landscape-mode');
+        localStorage.removeItem('landscapeMode');
+    }
+});
 
  // Chat functionality
  document.getElementById("send-button").addEventListener("click", sendMessage);
@@ -79,3 +103,6 @@
      chatBox.appendChild(newMessage);
      chatBox.scrollTop = chatBox.scrollHeight;
  }
+
+});
+ 
