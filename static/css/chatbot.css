@@ -26,10 +26,8 @@
 }
 
 .chat-header button {
+    margin-left: 0;
     padding: 0.4rem 0.6rem;
-    background: none;
-    border: none;
-    cursor: pointer;
 }
 
 .header-left {
