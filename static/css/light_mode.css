@@ -1,0 +1,51 @@
+body:not(.dark-mode) {
+    background: linear-gradient(135deg, var(--bg-gradient-start-light), var(--bg-gradient-end-light));
+}
+
+body:not(.dark-mode) .chat-container {
+    background: white;
+}
+
+/* Light Mode Header */
+body:not(.dark-mode) .chat-header {
+    background: linear-gradient(90deg, var(--primary-color-light), var(--secondary-color-light));
+    color: white;
+}
+
+body:not(.dark-mode) .avatar {
+    background: linear-gradient(135deg, var(--primary-color-light), var(--secondary-color-light));
+    color: white;
+}
+
+body:not(.dark-mode) .user-message {
+    background-color: var(--primary-color-light);
+    color: white;
+}
+
+body:not(.dark-mode) .bot-message {
+    background-color: #E5E7EB;
+    color: #1F2937;
+}
+
+body:not(.dark-mode) .input-area {
+    background: white;
+    border-color: #E5E7EB;
+}
+
+body:not(.dark-mode) #user-input {
+    background: white;
+    color: var(--text-color-light);
+    border-color: var(--input-border-light);
+}
+
+body:not(.dark-mode) .settings-content button {
+    background: var(--input-border-light); /* Light gray background */
+    color: var(--text-color-light); /* Dark text */
+    border: 1px solid var(--text-color-light); /* Optional border for contrast */
+}
+
+body:not(.dark-mode) .settings-content button:hover {
+    background: var(--primary-color-light); /* A more noticeable color on hover */
+    color: white;
+}
+

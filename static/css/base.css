@@ -1,0 +1,26 @@
+:root {
+    /* Light Mode Colors */
+    --primary-color-light: #d650a3;
+    --secondary-color-light: #548ada;
+    --bg-gradient-start-light: #83aae4;
+    --bg-gradient-end-light: #ce76ac;
+    --text-color-light: #1F2937;
+    --background-light: #F9FAFB;
+    --input-border-light: #E5E7EB;
+
+    /* Dark Mode Colors - Inspired by elegant themes */
+    --primary-color-dark: #c12261; /* Orange */
+    --secondary-color-dark: #401882; /* Violet */
+    --bg-gradient-start-dark: #451e8e; /* Deep slate gray */
+    --bg-gradient-end-dark: #741754; /* Almost black */
+    --pomodoro-gradient-start-dark: #e892b6;
+    --pomodoro-gradient-end-dark: #bb9bef;
+    --text-color-dark: #F3F4F6;
+    --background-dark: #2a364f;
+    --input-border-dark: #585e68;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+    transition: all 0.3s ease;
+}

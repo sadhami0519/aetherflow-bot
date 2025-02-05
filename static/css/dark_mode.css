@@ -1,0 +1,66 @@
+body.dark-mode {
+    background: linear-gradient(135deg, var(--bg-gradient-start-dark), var(--bg-gradient-end-dark));
+    color: var(--text-color-dark);
+}
+
+body.dark-mode .chat-container {
+    background: var(--background-dark);
+    box-shadow: 0 25px 50px -12px rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .chat-header {
+    background: linear-gradient(90deg, var(--primary-color-dark), var(--secondary-color-dark));
+    color: var(--text-color-dark);
+}
+
+body.dark-mode .avatar {
+    background: linear-gradient(135deg, var(--primary-color-dark), var(--secondary-color-dark));
+    color: var(--text-color-dark);
+}
+
+body.dark-mode .user-message {
+    background-color: var(--primary-color-dark);
+    color: var(--text-color-dark);
+}
+
+body.dark-mode .bot-message {
+    background-color: #374151;
+    color: var(--text-color-dark);
+}
+
+body.dark-mode .input-area {
+    background: var(--background-dark);
+    border-color: var(--input-border-dark);
+}
+
+body.dark-mode #user-input {
+    background: var(--background-dark);
+    color: var(--text-color-dark);
+    border-color: var(--input-border-dark);
+}
+
+body.dark-mode #send-button {
+    background-image: linear-gradient(to right, var(--primary-color-dark), var(--secondary-color-dark));
+}
+
+body.dark-mode .typing-indicator {
+    color: #9CA3AF;
+}
+
+body.dark-mode .settings-content {
+    background: var(--background-dark);
+    color: var(--text-color-dark);
+    box-shadow: 0 10px 25px rgba(255,255,255,0.05);
+}
+
+body.dark-mode .settings-content button {
+    background: var(--input-border-dark); /* A darker background */
+    color: var(--text-color-dark); /* White text */
+    border: 1px solid var(--text-color-dark); /* Optional border for visibility */
+}
+
+body.dark-mode .settings-content button:hover {
+    background: var(--primary-color-dark); /* A more noticeable color on hover */
+    color: white;
+}
+
