@@ -1,0 +1,76 @@
+/* scheduler.css */
+#scheduler-modal .settings-content {
+    max-width: 600px;
+    padding: 1.5rem;
+}
+
+.calendar-day {
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+    margin: 2px;
+}
+
+.marked-date {
+    background: #fee2e2 !important;
+    border: 2px solid #ef4444 !important;
+    color: #b91c1c !important;
+}
+
+.note-indicator {
+    font-size: 0.75rem;
+    pointer-events: none;
+}
+
+.note-popup {
+    background: white;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    width: 250px;
+}
+
+.note-input {
+    border: 1px solid #e5e7eb;
+    border-radius: 0.375rem;
+    padding: 0.5rem;
+    width: 100%;
+}
+
+body.dark-mode .calendar-day {
+    background-color: #2d3748;
+    color: white;
+}
+
+body.dark-mode .marked-date {
+    background: #7f1d1d !important;
+    border-color: #dc2626 !important;
+    color: #fecaca !important;
+}
+
+body.dark-mode .note-popup {
+    background: #1e293b;
+    border: 1px solid #475569;
+    color: white;
+}
+
+body.dark-mode .note-input {
+    background: #334155;
+    border-color: #475569;
+    color: white;
+}
+
+#calendar-grid {
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+}
+
+.calendar-controls button {
+    transition: opacity 0.2s ease;
+}
+
+.calendar-controls button:hover {
+    opacity: 0.8;
+}
