@@ -10,8 +10,8 @@ app = Flask(__name__, template_folder='frontend', static_folder='static')
 CORS(app)  # Enable CORS for all routes
 
 # Configuration
-PROJECT_ID = os.getenv('DIALOGFLOW_PROJECT_ID', 'smart-pie-n9vm')
-CREDENTIALS_PATH = os.getenv('GOOGLE_APPLICATION_CREDENTIALS', 'downloaded-creds2.json')
+PROJECT_ID = os.getenv('DIALOGFLOW_PROJECT_ID', '*bot-id*')
+CREDENTIALS_PATH = os.getenv('GOOGLE_APPLICATION_CREDENTIALS', '*credentials-file*')
 DATABASE = 'productivity.db'
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = CREDENTIALS_PATH
 
