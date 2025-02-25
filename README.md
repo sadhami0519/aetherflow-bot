@@ -1,4 +1,4 @@
-# 🚀 AI-Powered Productivity Chatbot
+# 🍀 AI-Powered Productivity Chatbot - aetherflow.ai
 
 ## 📌 Overview
 This project presents an AI-powered chatbot designed to enhance student productivity. Built with Python and Dialogflow, the chatbot features an intuitive front-end that facilitates seamless interactions in simple English.
