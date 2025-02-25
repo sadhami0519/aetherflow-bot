@@ -22,6 +22,9 @@ This project presents an AI-powered chatbot designed to enhance student producti
 ## 🔮 Future Enhancements
 - 🤖 **NLP Capabilities:** Improve chatbot responses and context awareness.
 - 🗄 **Database Integration:** Store and retrieve user-specific data for personalized interactions.
+- 🎲 **Gamification:** Streaks and Rewards to encourage user engagement.
+- 💢 **Better UX/UI Enhancements:** Smoother animations and effects.
+- 📊 **Data Visualization:** Tracking and displaying of user stats. 
 
 ## 🤝 Contributing
 Feel free to fork the repository and submit pull requests for improvements or new features.
